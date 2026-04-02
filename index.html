@@ -5,70 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air Sky – Airline</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #222;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #ccc;
-      text-decoration: none;
-    }
-    nav a:hover {
-      color: #fff;
-    }
+    body { margin:0; font-family:Arial, sans-serif; background:#000; color:#fff; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; border-bottom:1px solid #222; position:sticky; top:0; background:#000; }
+    nav a { margin:0 15px; color:#ccc; text-decoration:none; }
+    nav a:hover { color:#fff; }
+
     .hero {
-      text-align: center;
-      padding: 100px 20px;
+      height:90vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+      url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1920') center/cover;
+      display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
     }
-    .hero h1 {
-      font-size: 48px;
-    }
-    .hero p {
-      color: #aaa;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-    .btn {
-      background: #fff;
-      color: #000;
-      padding: 12px 25px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .card {
-      background: #111;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #222;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #222;
-      color: #777;
-    }
+    .hero h1 { font-size:50px; }
+    .hero p { color:#ccc; max-width:600px; }
+    .btn { margin-top:20px; background:#fff; color:#000; padding:12px 25px; border-radius:10px; text-decoration:none; font-weight:bold; }
+
+    .section { padding:60px 20px; text-align:center; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1100px; margin:auto; }
+    .card { background:#111; padding:20px; border-radius:15px; border:1px solid #222; }
+    .card img { width:100%; border-radius:10px; margin-bottom:10px; }
+
+    footer { text-align:center; padding:30px; border-top:1px solid #222; color:#777; }
   </style>
 </head>
 <body>
@@ -76,48 +33,78 @@
 <header>
   <h2>AIR SKY</h2>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Flüge</a>
-    <a href="#">Flotte</a>
-    <a href="#">Über uns</a>
-    <a href="#">Kontakt</a>
+    <a href="#home">Home</a>
+    <a href="#fleet">Flotte</a>
+    <a href="#dest">Ziele</a>
+    <a href="#about">Über</a>
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
   <h1>Fly Beyond the Sky</h1>
-  <p>Air Sky ist eine moderne Airline mit Sitz in Wien und bietet weltweite Verbindungen mit einer hochmodernen Flotte.</p>
+  <p>Premium Airline aus Wien mit modernster Flotte. Entdecke die Welt mit Air Sky.</p>
   <a href="#" class="btn">Flug buchen</a>
 </section>
 
-<section class="section">
+<section class="section" id="fleet">
   <h2>Unsere Flotte</h2>
   <div class="grid">
-    <div class="card">Airbus A320 Familie</div>
-    <div class="card">Airbus A330neo</div>
-    <div class="card">Airbus A350-900 / 1000</div>
-    <div class="card">Airbus A380</div>
-    <div class="card">Boeing 777</div>
-    <div class="card">Boeing 787 Dreamliner</div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517971071642-34a2d3ecc9cd?q=80&w=800">
+      <h3>Airbus A350-900</h3>
+      <p>Reichweite: 15.000 km<br>Passagiere: 300-350<br>Langstrecke, leise & effizient</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800">
+      <h3>Airbus A320</h3>
+      <p>Reichweite: 6.300 km<br>Passagiere: 150-180<br>Kurz- & Mittelstrecke</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b?q=80&w=800">
+      <h3>Airbus A330neo</h3>
+      <p>Reichweite: 13.300 km<br>Passagiere: 250-300<br>Effiziente Langstrecke</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=800">
+      <h3>Airbus A380</h3>
+      <p>Reichweite: 15.200 km<br>Passagiere: bis 850<br>Größtes Passagierflugzeug</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?q=80&w=800">
+      <h3>Boeing 777</h3>
+      <p>Reichweite: 14.000 km<br>Passagiere: 300-400<br>Langstrecken Klassiker</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800">
+      <h3>Boeing 787 Dreamliner</h3>
+      <p>Reichweite: 13.500 km<br>Passagiere: 250-330<br>Modern & komfortabel</p>
+    </div>
+
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="dest">
   <h2>Beliebte Ziele</h2>
   <div class="grid">
-    <div class="card">Wien</div>
-    <div class="card">New York</div>
-    <div class="card">Dubai</div>
-    <div class="card">Tokio</div>
-    <div class="card">London</div>
-    <div class="card">Paris</div>
+    <div class="card">Wien 🇦🇹</div>
+    <div class="card">New York 🇺🇸</div>
+    <div class="card">Dubai 🇦🇪</div>
+    <div class="card">Tokio 🇯🇵</div>
+    <div class="card">London 🇬🇧</div>
+    <div class="card">Paris 🇫🇷</div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="about">
   <h2>Über Air Sky</h2>
   <p style="max-width:700px;margin:auto;color:#aaa;">
-    Air Sky ist eine fiktive Premium-Airline mit Basis in Wien. Unser Ziel ist es, modernes Design, Komfort und Effizienz zu kombinieren und ein realistisches Airline-Erlebnis zu bieten.
+    Air Sky ist eine fiktive Airline mit Basis in Wien. Unser Fokus liegt auf modernem Design, Komfort und einem realistischen Airline-Erlebnis.
   </p>
 </section>
 
